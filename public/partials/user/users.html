@@ -1,0 +1,15 @@
+<h3>{{title}}</h3>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tr><td>ID</td><td>Name</td><td>Age</td><td><a class="btn btn-info" href="#/user"><span class="glyphicon glyphicon-plus" /> Add</a></td></tr>
+        <tr ng-repeat="user in users">
+        <td>{{user._id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td>
+        <a class="btn btn-info" href="#/users/{{user._id}}"><span class="glyphicon glyphicon-edit" /> Edit</a>
+        <a class="btn btn-danger" href="#" ng-click="remove(user)"><span class="glyphicon glyphicon-trash" /> Remove</a>
+        </td>
+        </tr>
+    </table>
+</div>
