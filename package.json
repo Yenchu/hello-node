@@ -3,8 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "express": "3.x",
+    "express": "3.4.x",
     "express-hbs": "0.5.x",
-    "mongoose": "3.x"
+    "mongoose": "3.8.x",
+    "bunyan": "0.22.x",
+    "bunyan-syslog": "0.2.x",
+    "request": "2.31.x"
   }
 }

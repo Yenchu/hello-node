@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+<link href="/lib/bootstrap-pagingtable/bootstrap-pagingtable.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+<script src="/lib/bootstrap-pagingtable/bootstrap-pagingtable.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/bsDirectives.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/home.js"></script>
+<script src="/js/user.js"></script>
+<script src="/js/cluster.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <div ng-if="token" ng-include="'/partials/header.html'"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+</div><!-- endof wrap -->
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" style="text-align:center; padding-top:12px">
+                <div>Copyright &copy; 2013 PROMISE Technology, Inc. All rights reserved.</div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div><!-- endof footer -->
+</body>
+</html>

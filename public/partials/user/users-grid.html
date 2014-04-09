@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+    <table id="user-table" class="table table-striped"></table>
+</div>
+<script type="text/javascript">
+var $table;
+
+var options = {
+    colModels: [
+        {name:'_id', header:'ID', key:true},
+        {name:'name', header:'Name', sortable:true, editable:true},
+        //{name:'dispaly_name', header:'Alias', sortable:true, editable:true}
+        {name:'age', header:'Age', sortable:true, editable:true}
+    ],
+    isPageable: true,
+    pageSizeOptions: [1, 5, 10],
+    remote: {url:'/users?grid=true', isRest:true}
+    //remote: {url:'http://localhost:8000/web/roles/role_names', method:'get'}
+};
+
+function createTable() {
+    $table = $('#user-table').pagingtable(options).on('dblclickRow', function(e) {
+        var rowId = e.rowId;
+        $table.pagingtable('updateRow', rowId);
+    });
+}
+
+$(function() {
+    createTable();
+});
+</script>

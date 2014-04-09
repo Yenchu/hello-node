@@ -1,0 +1,28 @@
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#/">Simple Object</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-main">
+        <ul class="nav navbar-nav" ng-controller="NavbarCtrl">
+            <li ng-class="{active: isActive('/')}"><a href="#/">Home</a></li>
+            <li class="dropdown" ng-class="{active: isActive('/users')}">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#/users.html">User List</a></li>
+                    <li><a href="#/users-grid.html">User Grid</a></li>
+                </ul>
+            </li>
+            <li ng-class="{active: isActive('/clusters')}"><a href="#/clusters.html">Cluster</a></li>
+            <li ng-class="{active: isActive('/nodes')}"><a href="#/nodes.html">Node</a></li>
+            <li ng-class="{active: isActive('/monitoring')}"><a href="#/monitoring.html">Monitoring</a></li>
+            <li ng-class="{active: isActive('/events')}"><a href="#/events.html">Event</a></li>
+            <li ng-class="{active: isActive('/alerts')}"><a href="#/alerts.html">Alert</a></li>
+        </ul>
+    </div>
+</nav>

@@ -1,15 +1,40 @@
-<h3>{{title}}</h3>
+<h3>User List</h3>
 <div class="table-responsive">
     <table class="table table-bordered">
-        <tr><td>ID</td><td>Name</td><td>Age</td><td><a class="btn btn-info" href="#/user"><span class="glyphicon glyphicon-plus" /> Add</a></td></tr>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td><button type="button" class="btn btn-info" data-toggle="modal" href="#edit-user-modal" ng-click="openEditModal()"><span class="glyphicon glyphicon-plus" /> Add</button></td>
+        </tr>
         <tr ng-repeat="user in users">
-        <td>{{user._id}}</td>
-        <td>{{user.name}}</td>
-        <td>{{user.age}}</td>
-        <td>
-        <a class="btn btn-info" href="#/users/{{user._id}}"><span class="glyphicon glyphicon-edit" /> Edit</a>
-        <a class="btn btn-danger" href="#" ng-click="remove(user)"><span class="glyphicon glyphicon-trash" /> Remove</a>
-        </td>
+            <td>{{user._id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="modal" href="#edit-user-modal" ng-click="openEditModal(user)"><span class="glyphicon glyphicon-edit" /> Edit</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" href="#remove-user-modal" ng-click="openRemoveModal(user)"><span class="glyphicon glyphicon-trash" /> Remove</button>
+            </td>
         </tr>
     </table>
 </div>
+<bs-modal modal-id="edit-user-modal" title="{{user._id ? 'Edit User' : 'Add User'}}" ok-fn="save()">
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="name" class="col-md-2 control-label">Name</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name" ng-model="user.name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="age" class="col-md-2 control-label">Age</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" id="age" name="age" placeholder="Age" ng-model="user.age">
+        </div>
+        </div>
+    </div>
+</form>
+</bs-modal>
+<bs-modal modal-id="remove-user-modal" title="Remove User" ok-fn="remove()">
+Are you sure to remove user {{user.name}}?
+</bs-modal>

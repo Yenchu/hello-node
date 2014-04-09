@@ -1,4 +1,4 @@
 hello-node
 ==========
 
-A sample application with node.js, AngularJS and Boostrap.
+A sample application with node.js, express, mongoose, AngularJS and Boostrap.
